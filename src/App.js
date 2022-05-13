@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React, { useState } from "react"
 import './App.css';
 
 function App() {
+
+  const [facts, setFacts] = useState("")
+
+  const boredomBuster = function(){
+    fetch("https://uselessfacts.jsph.pl//random.json?language=en")
+    .then(response => response.json())
+    .then(facts => setFacts(facts)) 
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>   
+          <div className="container">
+            <h2><em>Blob Facts</em></h2>
+            <div id="blob" onClick={boredomBuster}><h1>{facts.text}</h1>
+            </div>
+          </div>
+      </>
   );
 }
 
