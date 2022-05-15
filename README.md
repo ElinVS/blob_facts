@@ -5,7 +5,7 @@
 
 Press the Blob - Receive a fact
 
-(not of interest: the blob is animated and pulses pleasingly on the page)
+(note of interest: the blob is animated and pulses pleasingly on the page)
 
 ## Tech
 - React
